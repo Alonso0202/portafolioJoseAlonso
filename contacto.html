@@ -1,32 +1,96 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contactanos</title>
-  <link rel="stylesheet" href="css/estilo.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactanos</title>
+    <link rel="stylesheet" href="css/estilo.css">
+
 </head>
+
 <body>
 
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="sobre-mi.html">Sobre mí</a></li>
-        <li><a href="proyectos.html">Proyectos</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="sobre-mi.html">Sobre mí</a></li>
+                <li><a href="proyectos.html">Proyectos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <main>
-    <h1>Contactanos</h1>
-    <p>Texto simple de la página.</p>
-  </main>
+    <main>
+        <h1>Contáctame</h1>
 
-  <footer>
-    <p>© 2025 José Alonso</p>
-  </footer>
+        <form id="formulario-contacto">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" required>
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <p id="mensaje-confirmacion" style="display: none; color: green; margin-top: 10px;">
+            ¡Gracias por tu mensaje!
+        </p>
+        <div>
+            <button id="cambiar-color">Cambiar color</button>
+        </div>
+    </main>
+
+    <script>
+        // Obtenemos el formulario desde el HTML
+        const formulario = document.getElementById('formulario-contacto');
+
+        // Obtenemos el mensaje oculto desde el HTML
+        const mensaje = document.getElementById('mensaje-confirmacion');
+
+        // Cuando se envíe el formulario...
+        formulario.addEventListener('submit', function (evento) {
+            evento.preventDefault(); // Evitamos que se recargue la página
+
+            mensaje.style.display = 'block'; // Mostramos el mensaje de "gracias"
+
+            formulario.reset(); // Limpiamos todos los campos del formulario
+        });
+    </script>
+    <script>
+        // Obtenemos el botón
+        const boton = document.getElementById('cambiar-color');
+      
+        // Escuchamos el evento de clic
+        boton.addEventListener('click', function () {
+          // Generamos un color aleatorio
+          const color = generarColorAleatorio();
+          
+          // Cambiamos el fondo del body
+          document.body.style.backgroundColor = color;
+        });
+      
+        // Función para crear un color aleatorio
+        function generarColorAleatorio() {
+          const letras = '0123456789ABCDEF';
+          let color = '#';
+          for (let i = 0; i < 6; i++) {
+            color += letras[Math.floor(Math.random() * 16)];
+          }
+          return color;
+        }
+      </script>
+      
+
+    <footer>
+        <p>© 2025 José Alonso</p>
+    </footer>
 
 </body>
+
 </html>

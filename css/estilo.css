@@ -105,6 +105,17 @@
     color: darkblue;       /* Cambia a azul oscuro al pasar el mouse */
     text-decoration: underline; /* Aparece el subrayado al pasar el mouse */
   }
+
+  #cambiar-color {
+    background-color: #007bff; /* Color de fondo inicial */
+    color: white; /* Color de texto inicial */
+    border: none; /* Sin borde */
+    margin-top: 100px; /* Margen superior */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+  }
   
   @media (max-width: 768px) {
     nav ul {
