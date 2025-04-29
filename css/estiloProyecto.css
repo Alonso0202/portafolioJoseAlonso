@@ -1,0 +1,31 @@
+/* Sección de proyectos */
+.proyectos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  /* Tarjetas de proyectos */
+  .tarjeta-proyecto {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 300px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  .tarjeta-proyecto img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  /* Efecto hover en tarjetas */
+  .tarjeta-proyecto:hover {
+    transform: scale(1.05);
+  }
+  
